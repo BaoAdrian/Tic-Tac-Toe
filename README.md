@@ -85,21 +85,98 @@ The data the user enters into the following UITextFeild(s) can be accessed using
 
 
 <p>
-  Before the segue is actually completed, we need to prepare to pass the data (i.e. names entered into UITextField(s)) to SecondViewController and is acheived with the following function: 
+  Before the segue is actually completed, we need to prepare to pass the data within FirstViewController (i.e. names entered into UITextField(s)) to SecondViewController and receive it into String variables. 
+  Within SecondViewController, we created the following variables to receive the data:
   
   ```swift
   
+    var playerOneName : String = ""
+    var playerTwoName : String = ""
+    
+  ```
+  
+  Within FirstViewController, we can now send the values entered in the UITextField(s) using the following function:
+  
+  ```swift
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecondViewController" {
             let destinationVC = segue.destination as! SecondViewController
             
             // Access player names within this file and sets the value(s) in destination view controller
             destinationVC.playerOneName = self.playerOneName
-            destinationVC.playerTwoName  = self.playerTwoName // Optional based on selectin (one or two player)
+            destinationVC.playerTwoName  = self.playerTwoName // Optional based on selectin (one or two players)
         }
     }
   
   ```
   
-  </p>
+  
+  
+</p>
  
+<p>
+  Next step was to format SecondViewController to assign the received data to labels in the header. Within Main.storyboard, we created two labels linked them to IBOutlets within SecondViewController. 
+  
+  ```swift
+  
+    @IBOutlet weak var playerOneLabel: UILabel!
+    @IBOutlet weak var playerTwoLabel: UILabel! // Optional based on selection (one or two players)
+    
+  ```
+ 
+ Now all that is left is to assign the label(s) text attribute to the name(s) passed from FirstViewController. This can be done within the viewDidLoad() function like so:
+ 
+ ```swift
+ 
+    playerOneLabel.text = "\(playerOneName)"
+    playerTwoLabel.text = "\(playerTwoName)"
+ 
+ ```
+ 
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
