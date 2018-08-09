@@ -17,12 +17,15 @@ class TwoPlayerGameVC: UIViewController {
     var playerOneName : String = ""
     var playerTwoName : String = ""
     
+    var playerOneScore : Int = 0
+    var playerTwoScore : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Update Labels with names passed from previous page
-        playerOneLabel.text = "\(playerOneName)" + ":"
-        playerTwoLabel.text = "\(playerTwoName)" + ":"
+        playerOneLabel.text = "\(playerOneName)" + ": " + "\(playerOneScore)"
+        playerTwoLabel.text = "\(playerTwoName)" + ": " + "\(playerTwoScore)"
     }
     
     // Back Button Methods
