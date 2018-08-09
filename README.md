@@ -38,4 +38,6 @@ Project made to test various programmatic concepts using Swift such as:
   For this application, the data that needed to be passed originated from user input entered into one or two UITextFields, depending on which game mode the user selected (i.e. name of player one and/or player two). In order to pass user-entered text from a UITextField to the following ViewController, it was necessary to have the correct structure to store, access, update, and pass the data. 
 </p>
 
-<p> Test </p>
+<p> The first step was to navigate to Main.storyboard and focus on the one/two UITextFields in question. Opening the assistant editor, I created an IBOutlet for both UITextFeilds within their corresponding ViewController.swift file. </p>
+
+<p> ... </p>
