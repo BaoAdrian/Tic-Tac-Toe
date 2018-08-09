@@ -41,7 +41,7 @@ Project made to test various programmatic concepts using Swift such as:
 </p>
 
 <p> 
-  The first step was to navigate to Main.storyboard and create an IBOutlet for the UITextFeild(s) within FirstViewController. 
+  First, navigate to Main.storyboard and create an IBOutlet for the UITextFeild(s) within FirstViewController. 
   
 ```swift
     @IBOutlet weak var playerOneTF: UITextField!
@@ -50,14 +50,12 @@ Project made to test various programmatic concepts using Swift such as:
 
 The data the user enters into the following UITextFeild(s) can be accessed using the '.text' property and assigning the value to a variable that will be passed to SecondViewController. In order to complete this process, an action needs to be triggered that will pass the data as well as complete a segue to move to SecondViewController.
 
+Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewController and set the identifier to 'goToSecondViewController'. 
+
 </p>
 
 <p>
-  We then need to actually create the segue from FirstViewController to SecondViewController. This was acheived by creating a Manual Segue in Main.storyboard from FirstViewController to SecondViewController and set the identifier to 'goToSecondViewController'. 
-</p>
-
-<p>
-  We then needed an IBAction for a UIButton in FirstViewController named 'startBtn' with the following processes to complete when pressed:  
+  Create an IBAction for a UIButton in FirstViewController named 'startBtn' with the following processes to complete when pressed:  
   
 ```swift
   // Two-player game setting
@@ -85,8 +83,8 @@ The data the user enters into the following UITextFeild(s) can be accessed using
 
 
 <p>
-  Before the segue is actually completed, we need to prepare to pass the data within FirstViewController (i.e. names entered into UITextField(s)) to SecondViewController and receive it into String variables. 
-  Within SecondViewController, we created the following variables to receive the data:
+  Before the segue is actually completed, prepare to pass the data within FirstViewController (i.e. names entered into UITextField(s)) to SecondViewController and receive it into String variables. 
+  Within SecondViewController, create the following variables to receive the data:
   
   ```swift
   
