@@ -20,7 +20,6 @@ class HomeScreenVC: UIViewController {
         
         // Make adjustments to button
         pvpButton.layer.cornerRadius = 6
-        
         pvcButton.layer.cornerRadius = 6
         
         

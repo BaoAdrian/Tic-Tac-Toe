@@ -1,5 +1,5 @@
 //
-//  twoPlayerGameVC.swift
+//  TwoPlayerGameVC.swift
 //  TicTacToe
 //
 //  Created by Adrian Bao on 8/8/18.
@@ -11,7 +11,6 @@ import UIKit
 class TwoPlayerGameVC: UIViewController {
 
     // Player Name Text Fields
-
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var playerTwoLabel: UILabel!
     
@@ -26,21 +25,31 @@ class TwoPlayerGameVC: UIViewController {
         playerTwoLabel.text = "\(playerTwoName)" + ":"
     }
     
-
+    // Back Button Methods
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goBackToTwoPlayersSetUpVC", sender: self)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goBackToTwoPlayersSetUpVC" {
+//            // No necessary processes, Xcode performs segue
+//        }
+//    }
+    
+    
+    
+    // Undo Button Methods
+    
+    
+    
+    
+    // Reset Button Methods
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
