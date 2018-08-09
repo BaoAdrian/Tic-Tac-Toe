@@ -29,3 +29,13 @@ Project made to test various programmatic concepts using Swift such as:
 
 </br>
 
+
+<h1>Notes:</h1>
+
+<h3>Passing Data between View Controllers </h3>
+
+<p>
+  For this application, the data that needed to be passed originated from user input entered into one or two UITextFields, depending on which game mode the user selected (i.e. name of player one and/or player two). In order to pass user-entered text from a UITextField to the following ViewController, it was necessary to have the correct structure to store, access, update, and pass the data. 
+</p>
+
+<p> Test </p>
