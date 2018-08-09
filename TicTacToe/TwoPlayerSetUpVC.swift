@@ -8,24 +8,22 @@
 
 import UIKit
 
-protocol UpdatePlayerNamesDelegate {
-    func setPlayerNames(playerOne : String, playerTwo : String)
-}
+
 
 class TwoPlayerSetUpVC: UIViewController {
     
     let PLAYER_ONE : String = "Player 1"
     let PLAYER_TWO : String = "Player 2"
 
-    var delegate : UpdatePlayerNamesDelegate?
+    
+    var playerOneName : String = ""
+    var playerTwoName : String = ""
     
     // Editable TextFields to hold players names - Will have default values
     @IBOutlet weak var playerOneTF: UITextField!
     @IBOutlet weak var playerTwoTF: UITextField!
     
-    var playerOneName : String = ""
-    var playerTwoName : String = ""
-    
+    @IBOutlet weak var startBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +33,11 @@ class TwoPlayerSetUpVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
 
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goBackToHomescreenVC", sender: self)
+    }
+    
 
     
     
@@ -45,24 +46,35 @@ class TwoPlayerSetUpVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- 
     
-    @IBAction func startButtonPressed(_ sender: UIButton) {
+    
+    @IBAction func startBtnPressed(_ sender: Any) {
         
-        if let name = playerOneTF.text {
+        // Following if-lets protects against user defaulting names
+        if let name = playerOneTF.text, !name.isEmpty {
             self.playerOneName = name
         } else {
             self.playerOneName = PLAYER_ONE
         }
         
-        if let name = playerTwoTF.text {
+        if let name = playerTwoTF.text, !name.isEmpty {
             self.playerTwoName = name
         } else {
             self.playerTwoName = PLAYER_TWO
         }
         
-        delegate?.setPlayerNames(playerOne: playerOneName, playerTwo: playerTwoName)
-        
+        performSegue(withIdentifier: "goToTwoPlayerGameVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToTwoPlayerGameVC" {
+            let destinationVC = segue.destination as! TwoPlayerGameVC
+            
+            destinationVC.playerOneName = self.playerOneName
+            destinationVC.playerTwoName  = self.playerTwoName
+        } else if segue.identifier == "goBackToHomescreenVC" {
+            // No data processing necessary, Xcode performs segue
+        }
     }
     
     

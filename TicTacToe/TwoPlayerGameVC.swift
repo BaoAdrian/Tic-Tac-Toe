@@ -8,24 +8,24 @@
 
 import UIKit
 
-class TwoPlayerGameVC: UIViewController, UpdatePlayerNamesDelegate {
+class TwoPlayerGameVC: UIViewController {
 
     // Player Name Text Fields
+
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var playerTwoLabel: UILabel!
+    
+    var playerOneName : String = ""
+    var playerTwoName : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
-        // Do any additional setup after loading the view.
+        // Update Labels with names passed from previous page
+        playerOneLabel.text = "\(playerOneName)" + ":"
+        playerTwoLabel.text = "\(playerTwoName)" + ":"
     }
     
-    func setPlayerNames(playerOne: String, playerTwo: String) {
-        playerOneLabel.text = playerOne
-        playerTwoLabel.text = playerTwo
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
