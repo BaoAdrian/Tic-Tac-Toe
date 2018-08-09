@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7467E3D5211BC0B4005B0980 /* TwoPlayerSetUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7467E3D4211BC0B4005B0980 /* TwoPlayerSetUpVC.swift */; };
+		7467E3D7211BCD49005B0980 /* TwoPlayerGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7467E3D6211BCD49005B0980 /* TwoPlayerGameVC.swift */; };
 		74D2D660211AC6A900B335DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2D65F211AC6A900B335DC /* AppDelegate.swift */; };
 		74D2D662211AC6A900B335DC /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2D661211AC6A900B335DC /* HomeScreenVC.swift */; };
 		74D2D665211AC6A900B335DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D2D663211AC6A900B335DC /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7467E3D4211BC0B4005B0980 /* TwoPlayerSetUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerSetUpVC.swift; sourceTree = "<group>"; };
+		7467E3D6211BCD49005B0980 /* TwoPlayerGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerGameVC.swift; sourceTree = "<group>"; };
 		74D2D65C211AC6A900B335DC /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D2D65F211AC6A900B335DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D2D661211AC6A900B335DC /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				74D2D65F211AC6A900B335DC /* AppDelegate.swift */,
 				74D2D661211AC6A900B335DC /* HomeScreenVC.swift */,
+				7467E3D4211BC0B4005B0980 /* TwoPlayerSetUpVC.swift */,
+				7467E3D6211BCD49005B0980 /* TwoPlayerGameVC.swift */,
 				74D2D663211AC6A900B335DC /* Main.storyboard */,
 				74D2D666211AC6AB00B335DC /* Assets.xcassets */,
 				74D2D668211AC6AB00B335DC /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D2D662211AC6A900B335DC /* HomeScreenVC.swift in Sources */,
+				7467E3D5211BC0B4005B0980 /* TwoPlayerSetUpVC.swift in Sources */,
+				7467E3D7211BCD49005B0980 /* TwoPlayerGameVC.swift in Sources */,
 				74D2D660211AC6A900B335DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
