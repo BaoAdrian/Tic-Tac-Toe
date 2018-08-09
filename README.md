@@ -52,9 +52,13 @@ The data the user enters into the following UITextFeild(s) can be accessed using
 
 </p>
 
-<p> 
-  Created an IBAction for a UIButton in FirstViewController named 'startBtn' with the following processes to complete when pressed:  
+<p>
+  We then need to actually create the segue from FirstViewController to SecondViewController. This was acheived by creating a Manual Segue in Main.storyboard from FirstViewController to SecondViewController and set the identifier to 'goToSecondViewController'. 
+</p>
 
+<p>
+  We then needed an IBAction for a UIButton in FirstViewController named 'startBtn' with the following processes to complete when pressed:  
+  
 ```swift
   // Two-player game setting
   @IBAction func startBtnPressed(_ sender: Any) {
@@ -72,8 +76,30 @@ The data the user enters into the following UITextFeild(s) can be accessed using
             self.playerTwoName = SOME_DEFAULT_STRING_NAME // (i.e. 'Player 2')
         }
         
-        performSegue(withIdentifier: "SecondViewController", sender: self)
+        performSegue(withIdentifier: "goToSecondViewController", sender: self)
+        
     }
 ```
 
 </p>
+
+
+<p>
+  Before the segue is actually completed, we need to prepare to pass the data (i.e. names entered into UITextField(s)) to SecondViewController and is acheived with the following function: 
+  
+  ```swift
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSecondViewController" {
+            let destinationVC = segue.destination as! SecondViewController
+            
+            // Access player names within this file and sets the value(s) in destination view controller
+            destinationVC.playerOneName = self.playerOneName
+            destinationVC.playerTwoName  = self.playerTwoName // Optional based on selectin (one or two player)
+        }
+    }
+  
+  ```
+  
+  </p>
+ 
