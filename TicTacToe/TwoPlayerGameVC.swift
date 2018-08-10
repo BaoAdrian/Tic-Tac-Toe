@@ -72,17 +72,31 @@ class TwoPlayerGameVC: UIViewController {
                 // Winner, make game inactive, declare a winner
                 isActive = false
                 if board[line[0]] == 1 {
-                    // X Wins
+                    // Player one wins
                     playerOneScore += 1
                     showPopUpMessage(declaredWinner: "\(playerOneName)" + " wins!")
                     updateHeader()
                 } else {
-                    // O Wins
+                    // Player two wins
                     playerTwoScore += 1
                     showPopUpMessage(declaredWinner: "\(playerTwoName)" + " wins!")
                     updateHeader()
                 }
             }
+        }
+        
+        isActive = false
+        
+        for i in board {
+            if i == 0 {
+                isActive = true
+                break
+            }
+        }
+        
+        if isActive == false {
+            // Tie occurred
+            showPopUpMessage(declaredWinner: "It's a tie!")
         }
     }
     
@@ -102,10 +116,10 @@ class TwoPlayerGameVC: UIViewController {
     
     // Reset Button Methods
     @IBAction func resetBtnPressed(_ sender: AnyObject) {
-        // Reset score
         playerOneScore = 0
         playerTwoScore = 0
         clearBoard()
+        updateHeader()
     }
     
     func showPopUpMessage(declaredWinner : String) {
@@ -119,7 +133,6 @@ class TwoPlayerGameVC: UIViewController {
     }
     
     func clearBoard() {
-        // Reset board
         board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         isActive = true
         activePlayer = 1
@@ -132,7 +145,6 @@ class TwoPlayerGameVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //    // Shows notification of winner
