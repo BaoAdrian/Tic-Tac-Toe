@@ -87,10 +87,8 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
   Within SecondViewController, create the following variables to receive the data:
   
   ```swift
-  
     var playerOneName : String = ""
     var playerTwoName : String = ""
-    
   ```
   
   Within FirstViewController, we can now send the values entered in the UITextField(s) using the following function:
@@ -105,7 +103,6 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
             destinationVC.playerTwoName  = self.playerTwoName // Optional based on selectin (one or two players)
         }
     }
-  
   ```
   
   
@@ -116,19 +113,15 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
   Next step was to format SecondViewController to assign the received data to labels in the header. Within Main.storyboard, we created two labels linked them to IBOutlets within SecondViewController. 
   
   ```swift
-  
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var playerTwoLabel: UILabel! // Optional based on selection (one or two players)
-    
   ```
  
  Now all that is left is to assign the label(s) text attribute to the name(s) passed from FirstViewController. This can be done within the viewDidLoad() function like so:
  
  ```swift
- 
     playerOneLabel.text = "\(playerOneName)"
     playerTwoLabel.text = "\(playerTwoName)"
- 
  ```
  
 </p>
