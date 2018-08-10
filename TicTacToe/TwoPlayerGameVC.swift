@@ -120,8 +120,6 @@ class TwoPlayerGameVC: UIViewController {
         
         updateHeader()
         
-        
-        
     }
     
     // Back Button Methods
