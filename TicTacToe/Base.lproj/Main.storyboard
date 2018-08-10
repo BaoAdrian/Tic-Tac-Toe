@@ -47,7 +47,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XVo-46-vwf" kind="presentation" id="fUn-Lc-2w8"/>
+                                    <segue destination="XVo-46-vwf" kind="show" id="fUn-Lc-2w8"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tic_Tac_Toe_Board" translatesAutoresizingMaskIntoConstraints="NO" id="xhJ-Sd-07L">
@@ -151,7 +151,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="XVo-46-vwf" eventType="touchUpInside" id="vI1-XJ-BWv"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goBackToHomescreenVC" id="Qff-AQ-gPm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Move:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIz-Ny-lNc">
@@ -181,7 +180,7 @@
                         <outlet property="playerOneTF" destination="qn1-hP-pEI" id="gpp-3A-f4j"/>
                         <outlet property="playerTwoTF" destination="jgW-ld-1y8" id="i8o-Qk-9l6"/>
                         <outlet property="startBtn" destination="EtW-tm-udU" id="qYc-pK-l2e"/>
-                        <segue destination="a2f-Nq-MF3" kind="presentation" identifier="goToTwoPlayerGameVC" id="oHg-FA-dG3"/>
+                        <segue destination="a2f-Nq-MF3" kind="show" identifier="goToTwoPlayerGameVC" id="oHg-FA-dG3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiV-CF-cAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,7 +325,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="a2f-Nq-MF3" eventType="touchUpInside" id="eeh-3j-QHD"/>
-                                    <segue destination="XVo-46-vwf" kind="show" identifier="goBackToTwoPlayersSetUpVC" id="9NP-bq-m1e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-lB-YNW">
@@ -421,7 +419,4 @@
         <image name="Tic_Tac_Toe_Board" width="400" height="400"/>
         <image name="Tic_Tac_Toe_Title" width="2100" height="1500"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="9NP-bq-m1e"/>
-    </inferredMetricsTieBreakers>
 </document>

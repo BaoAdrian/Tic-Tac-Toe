@@ -35,7 +35,7 @@ class TwoPlayerSetUpVC: UIViewController {
     
 
     @IBAction func backBtnPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "goBackToHomescreenVC", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -72,8 +72,6 @@ class TwoPlayerSetUpVC: UIViewController {
             
             destinationVC.playerOneName = self.playerOneName
             destinationVC.playerTwoName  = self.playerTwoName
-        } else if segue.identifier == "goBackToHomescreenVC" {
-            // No data processing necessary, Xcode performs segue
         }
     }
     

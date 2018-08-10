@@ -15,14 +15,18 @@ class TwoPlayerGameVC: UIViewController {
     
     var activePlayer : Int = 1
     
-    // 0 makes the individual piece inactive, subject to change
+    // 0 - inactive
     var board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var isActive = true // If game is active or not (winner not yet declared)
+    var isActive = true
+    
+    let winningLines = [
+        [0,1,2], [3,4,5], [6,7,8], // Rows
+        [0,3,6], [1,4,7], [2,5,8], // Columns
+        [0,4,8], [6,4,2] // Diagonals
+    ]
 
-    // Player Name Text Fields
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var playerTwoLabel: UILabel!
-    
     
     var playerOneName : String = ""
     var playerTwoName : String = ""
@@ -30,20 +34,23 @@ class TwoPlayerGameVC: UIViewController {
     var playerOneScore : Int = 0
     var playerTwoScore : Int = 0
     
-    // Counter variable since we don't need to search for a winning move until the fifth move
-    var moveNumber : Int = 0
-    
-    // IBOutlets following the following format
+    // Buttons assigned with tags as follows
     /*
             |       |
-        0   |   1   |   2
+        1   |   2   |   3
      -------|-------|-------
-        3   |   4   |   5
+        4   |   5   |   6
      -------|-------|-------
-        6   |   7   |   8
+        7   |   8   |   9
             |       |
     */
-    // Each button has tag set to their respective position
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateHeader()
+        
+    }
     
     // When a section (button) is pressed, sets Icon image and updates active player
     @IBAction func btnPressed(_ sender: AnyObject) {
@@ -67,13 +74,13 @@ class TwoPlayerGameVC: UIViewController {
                 if board[line[0]] == 1 {
                     // X Wins
                     playerOneScore += 1
+                    showPopUpMessage(declaredWinner: "\(playerOneName)" + " wins!")
                     updateHeader()
-                    showToast(message: "\(playerOneName)" + " wins!")
                 } else {
                     // O Wins
                     playerTwoScore += 1
+                    showPopUpMessage(declaredWinner: "\(playerTwoName)" + " wins!")
                     updateHeader()
-                    showToast(message: "\(playerTwoName)" + " wins!")
                 }
             }
         }
@@ -86,50 +93,32 @@ class TwoPlayerGameVC: UIViewController {
     }
     
     
-    // Shows notification of winner
-    func showToast(message : String) {
-        
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = UIColor.white
-        toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: "Helvetica Neue", size: 18.0)
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10;
-        toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
-    }
-    
-    
-    // Winning combinations
-    let winningLines = [
-        [0,1,2], [3,4,5], [6,7,8], // Rows
-        [0,3,6], [1,4,7], [2,5,8], // Columns
-        [0,4,8], [6,4,2] // Diagonals
-    ]
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        updateHeader()
-        
-    }
     
     // Back Button Methods
     @IBAction func backBtnPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "goBackToTwoPlayersSetUpVC", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
 
     
     // Reset Button Methods
     @IBAction func resetBtnPressed(_ sender: AnyObject) {
+        // Reset score
+        playerOneScore = 0
+        playerTwoScore = 0
+        clearBoard()
+    }
+    
+    func showPopUpMessage(declaredWinner : String) {
+        let alert = UIAlertController(title: "Results", message: declaredWinner, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { action in
+            self.clearBoard()
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func clearBoard() {
         // Reset board
         board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         isActive = true
@@ -141,13 +130,30 @@ class TwoPlayerGameVC: UIViewController {
         }
     }
     
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //    // Shows notification of winner
+    //    func showToast(message : String) {
+    //
+    //        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+    //        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    //        toastLabel.textColor = UIColor.white
+    //        toastLabel.textAlignment = .center;
+    //        toastLabel.font = UIFont(name: "Helvetica Neue", size: 18.0)
+    //        toastLabel.text = message
+    //        toastLabel.alpha = 1.0
+    //        toastLabel.layer.cornerRadius = 10;
+    //        toastLabel.clipsToBounds  =  true
+    //        self.view.addSubview(toastLabel)
+    //        UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut, animations: {
+    //            toastLabel.alpha = 0.0
+    //        }, completion: {(isCompleted) in
+    //            toastLabel.removeFromSuperview()
+    //        })
+    //    }
 
 
 }
