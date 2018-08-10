@@ -100,7 +100,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
             
             // Access player names within this file and sets the value(s) in destination view controller
             destinationVC.playerOneName = self.playerOneName
-            destinationVC.playerTwoName  = self.playerTwoName // Optional based on selectin (one or two players)
+            destinationVC.playerTwoName  = self.playerTwoName // Optional based on selection (one or two players)
         }
     }
   ```
