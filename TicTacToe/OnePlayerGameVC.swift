@@ -31,6 +31,8 @@ class OnePlayerGameVC: UIViewController {
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var computerLabel: UILabel!
     
+    // Establish AI for Computer
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

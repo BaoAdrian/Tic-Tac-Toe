@@ -48,12 +48,16 @@ class TwoPlayerGameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         updateHeader()
         
     }
     
     // When a section (button) is pressed, sets Icon image and updates active player
     @IBAction func btnPressed(_ sender: AnyObject) {
+        
+        print(activePlayer)
         if board[sender.tag - 1] == 0 && isActive == true {
             // Set board to update to whichever active player selected place on board
             board[sender.tag - 1] = activePlayer
@@ -76,6 +80,7 @@ class TwoPlayerGameVC: UIViewController {
                     playerOneScore += 1
                     showPopUpMessage(declaredWinner: "\(playerOneName)" + " wins!")
                     updateHeader()
+                    
                 } else {
                     // Player two wins
                     playerTwoScore += 1
@@ -135,7 +140,13 @@ class TwoPlayerGameVC: UIViewController {
     func clearBoard() {
         board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         isActive = true
-        activePlayer = 1
+        
+        // Alternating turns
+        if (playerOneScore + playerTwoScore) % 2 == 0 {
+            activePlayer = 1
+        } else {
+            activePlayer = 2
+        }
         
         for i in 1...9 {
             let btn = view.viewWithTag(i) as! UIButton
