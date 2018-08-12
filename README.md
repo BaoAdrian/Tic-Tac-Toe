@@ -1,8 +1,10 @@
 # Tic Tac Toe
+
+<img align = "right" src = "SampleImages/HomeScreenVC.png" width = "275" height = "450" hspace = "20" alt = "Homescreen" />
+
 Tic-Tac-Toe iOS Game developed using Swift 4 and Xcode 9.4.1. Implemented introductory UX operations such as name customizations, allowing choice of which player makes the first move, and keeping score to determine winner of a 'Best-of' series. 
 Project made to test various programmatic concepts using Swift such as passing data between View Controllers and utilizing Custom Segues.
 </br>
-
 
 </br>
 
@@ -126,14 +128,91 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 </p>
 
 
+</br>
+
+<h3> 
+  Pop-Up Message using UIAlertController 
+</h3>
+
+<p> 
+  Utilized UIAlertController as a way to allow a clean reset of play as well as a notification to declare the winner (if any) or a tie. 
+</p>
+
+<p>
+  <img align = "right" src = "SampleImages/PopUp.png" width = "350" height = "150" hspace = "20" alt = "PopUp - UIAlertController" />
+  
+  There are two styles to a UIAlertController, .alert and .actionSheet. For the purpose of this application, it required a way to serve as  a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. 
+ 
+</p>
+
+<p>
+  The following function creates the UIAlertController with the ActionSheet style, adds an action to the Controller to execute any necessary functions (in this case, clears the board), and presents the pop up at the bottom of the screen. 
+  
+  ```swift
+  
+    func showPopUpMessage(declaredWinner : String) {
+        let alert = UIAlertController(title: "Results", message: declaredWinner, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { action in
+            // Insert any methods to execute upon 'Play Again' selection
+            self.clearBoard()
+        }))
+        
+        self.present(alert, animated: true)
+    }
+  
+  ```
+  
+  
+</p>
 
 
+<p>
+  
+  <img align = "right" src = "SampleImages/TwoPlayerGameWithPopUp.png" width = "275" height = "450" hspace = "20" alt = "TwoPlayerGamePopUp" />
+  
+  The function can be called anywhere in the program with any parameters, however, for this application, it made sense to call this function every time a winner was detected OR the board was filled and ended in a tie. The following method was used to check if the current state of the board contained a winning line (i.e. rows, columns, or diagonals) and presents UIAlertController with the respective information. 
+  
+  
+  ```swift
+  
+        // Check if board has a winner
+        for line in winningLines {
+            if board[line[0]] != 0 && board[line[0]] == board[line[1]] && board[line[1]] == board[line[2]] {
+                // Winning line detected
+                if board[line[0]] == 1 {
+                    // Player one wins
+                    playerOneScore += 1
+                    showPopUpMessage(declaredWinner: "\(playerOneName)" + " wins!")
+                    updateHeader() // Update scores
+                } else {
+                    // Player two wins
+                    playerTwoScore += 1
+                    showPopUpMessage(declaredWinner: "\(playerTwoName)" + " wins!")
+                    updateHeader() // Update scores
+                }
+            }
+        }
+        
+        isActive = false
+        
+        // Checking board for ties
+        for i in board {
+            if i == 0 {
+                isActive = true
+                break
+            }
+        }
+        if isActive == false {
+            // Tie occurred
+            showPopUpMessage(declaredWinner: "It's a tie!")
+        }
 
 
-
-
-
-
+  
+  ```
+  
+</p>
 
 
 
