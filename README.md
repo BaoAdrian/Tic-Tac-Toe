@@ -1,13 +1,6 @@
 # Tic Tac Toe
 Tic-Tac-Toe iOS Game developed using Swift 4 and Xcode 9.4.1. Implemented introductory UX operations such as name customizations, allowing choice of which player makes the first move, and keeping score to determine winner of a 'Best-of' series. 
-Project made to test various programmatic concepts using Swift such as:
-
-<ul> 
-  <li> Passing data between View Controllers </li>
-  <li> Custom segues </li>
-  <li> UI Placement Tracking </li>
-  <li> ... </li>
-</ul>
+Project made to test various programmatic concepts using Swift such as passing data between View Controllers and utilizing Custom Segues.
 </br>
 
 
@@ -16,14 +9,19 @@ Project made to test various programmatic concepts using Swift such as:
 
 <h1>Future Enhancements:</h1>
 <ul>
-  <li> TBD </li>
+  <li> Thorough Testing </li>
+  <li> Implement Computer UI using minimax </li>
+  <li> Best-of Series feature </li>
+  <li> Various animations such as drawing winning lines before announcing winner </li>
 </ul>
 
 </br>
 
 <h1>Latest Adjustments:</h1>
 <ul>
-  <li> TBD </li>
+  <li> 08/11/2018 - Introduce alternating turns functionality when a winner is declared </li>
+  <li> 08/11/2018 - Convert toast message to pop-up using UIAlertController </li>
+  <li> 08/10/2018 - Created toast message functionality to declare state of game (i.e: win/lose/tie) </li>
 </ul>
 
 
