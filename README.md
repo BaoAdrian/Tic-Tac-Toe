@@ -128,7 +128,17 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 </p>
 
 
+
+
+
+
+
 </br>
+</br>
+
+
+
+
 
 <h3> 
   Pop-Up Message using UIAlertController 
@@ -139,7 +149,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 </p>
 
 <p>
-  <img align = "right" src = "SampleImages/PopUp.png" width = "350" height = "150" hspace = "20" alt = "PopUp - UIAlertController" />
+  <img align = "right" src = "SampleImages/TwoPlayerGameWithPopUp.png" width = "275" height = "500" hspace = "20" alt = "TwoPlayerGamePopUp" />
   
   There are two styles to a UIAlertController, .alert and .actionSheet. For the purpose of this application, it required a way to serve as  a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. 
  
@@ -169,7 +179,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 <p>
   
-  <img align = "right" src = "SampleImages/TwoPlayerGameWithPopUp.png" width = "275" height = "450" hspace = "20" alt = "TwoPlayerGamePopUp" />
+  
   
   The function can be called anywhere in the program with any parameters, however, for this application, it made sense to call this function every time a winner was detected OR the board was filled and ended in a tie. The following method was used to check if the current state of the board contained a winning line (i.e. rows, columns, or diagonals) and presents UIAlertController with the respective information. 
   
