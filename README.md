@@ -19,6 +19,7 @@ Project made to test various programmatic concepts using Swift such as passing d
 
 <h1>Latest Adjustments:</h1>
 <ul>
+  <li> 08/12/2018 - 'First-to-move' selection added. If none is selected, defaults to 1st player </li>
   <li> 08/11/2018 - Introduce alternating turns functionality when a winner is declared </li>
   <li> 08/11/2018 - Convert toast message to pop-up using UIAlertController </li>
   <li> 08/10/2018 - Created toast message functionality to declare state of game (i.e: win/lose/tie) </li>
