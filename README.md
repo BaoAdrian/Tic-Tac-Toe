@@ -150,7 +150,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 <p> 
   
-  Utilized UIAlertController as a way to allow a clean reset of play as well as a notification to declare the winner (if any) or a tie. 
+  Utilized UIAlertController as a way to allow a clean reset of play as well as a notification to declare the winner (if any) or a tie. The application required a way to serve as a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. 
   
   <img align = "right" src = "SampleImages/PopUp.png" width = "325" height = "150" hspace = "20" alt = "TwoPlayerGamePopUp" />
   
@@ -160,7 +160,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 <p>
   
-  The application required a way to serve as a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. The following function creates the UIAlertController with the ActionSheet style, adds an action to the Controller to execute any necessary functions (in this case, clears the board), and presents the pop up at the bottom of the screen. 
+  The following function creates the UIAlertController with the ActionSheet style, adds an action to the Controller to execute any necessary functions (in this case, clears the board), and presents the pop up at the bottom of the screen. 
   
   ```swift
   
