@@ -33,7 +33,7 @@ Project made to test various programmatic concepts using Swift such as passing d
 
 <h1>Notes:</h1>
 
-<h2> Passing Data between View Controllers </h2>
+<h3> Passing Data between View Controllers </h3>
 
 </br>
 
@@ -142,9 +142,9 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 
 
-<h2> 
+<h3> 
   Pop-Up Message using UIAlertController 
-</h2>
+</h3>
 
 </br>
 
@@ -160,12 +160,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 <p>
   
-  The applcation required a way to serve as a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. This was acheived by using the .actionSheet style of the UIAlertController.
- 
-</p>
-
-<p>
-  The following function creates the UIAlertController with the ActionSheet style, adds an action to the Controller to execute any necessary functions (in this case, clears the board), and presents the pop up at the bottom of the screen. 
+  The application required a way to serve as a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. The following function creates the UIAlertController with the ActionSheet style, adds an action to the Controller to execute any necessary functions (in this case, clears the board), and presents the pop up at the bottom of the screen. 
   
   ```swift
   
