@@ -138,6 +138,7 @@ class TwoPlayerGameVC: UIViewController {
         updateHeader()
     }
     
+    
     func showPopUpMessage(gameStateResult : String) {
         let alert = UIAlertController(title: "Results", message: gameStateResult, preferredStyle: .actionSheet)
         
@@ -148,6 +149,7 @@ class TwoPlayerGameVC: UIViewController {
         
         self.present(alert, animated: true)
     }
+    
     
     func clearBoard() {
         board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
