@@ -160,7 +160,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 <p>
   
-  There are two styles to a UIAlertController, .alert and .actionSheet. For the purpose of this application, it required a way to serve as  a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. 
+  The applcation required a way to serve as a notification (similar to a toast) as well as a SINGLE button to allow the user to reset the game. This was acheived by using the .actionSheet style of the UIAlertController.
  
 </p>
 
@@ -190,7 +190,7 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
   
   
   
-  The function can be called anywhere in the program with any parameters, however, for this application, it made sense to call this function every time a winner was detected OR the board was filled and ended in a tie. The following method was used to check if the current state of the board contained a winning line (i.e. rows, columns, or diagonals) and presents UIAlertController with the respective information. 
+  The function can be called anywhere in the program with any parameters, however, for this application, it made sense to call this function every time a winner was detected OR the board filled and the game ended in a tie. The following method was used to check if the current state of the board contained a winning line (i.e. rows, columns, or diagonals) and presents UIAlertController with the respective information. 
   
   
   ```swift
