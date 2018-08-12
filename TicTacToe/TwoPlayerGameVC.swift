@@ -49,11 +49,13 @@ class TwoPlayerGameVC: UIViewController {
             |       |
     */
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         determineFirstMove()
         updateHeader()
     }
+    
     
     // When a section (button) is pressed, sets Icon image and updates active player
     @IBAction func btnPressed(_ sender: AnyObject) {
@@ -106,7 +108,9 @@ class TwoPlayerGameVC: UIViewController {
     }
     
     
+    
     func determineFirstMove() {
+        // Check if a player was selected from previous VC, if not, set default
         if playerToGoFirst != 1 && playerToGoFirst != 2 {
             activePlayer = DEFAULT_FIRST_PLAYER
         } else {
