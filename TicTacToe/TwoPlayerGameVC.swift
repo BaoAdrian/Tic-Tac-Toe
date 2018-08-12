@@ -75,18 +75,16 @@ class TwoPlayerGameVC: UIViewController {
         // Check if board has a winner
         for line in winningLines {
             if board[line[0]] != 0 && board[line[0]] == board[line[1]] && board[line[1]] == board[line[2]] {
-                // Winner, make game inactive, declare a winner
-                isActive = false
+                // Winning line detected
                 if board[line[0]] == 1 {
                     // Player one wins
                     playerOneScore += 1
-                    showPopUpMessage(declaredWinner: "\(playerOneName)" + " wins!")
+                    showPopUpMessage(gameStateResult: "\(playerOneName)" + " wins!")
                     updateHeader()
-                    
                 } else {
                     // Player two wins
                     playerTwoScore += 1
-                    showPopUpMessage(declaredWinner: "\(playerTwoName)" + " wins!")
+                    showPopUpMessage(gameStateResult: "\(playerTwoName)" + " wins!")
                     updateHeader()
                 }
             }
@@ -94,16 +92,16 @@ class TwoPlayerGameVC: UIViewController {
         
         isActive = false
         
+        // Checking board for ties
         for i in board {
             if i == 0 {
                 isActive = true
                 break
             }
         }
-        
         if isActive == false {
             // Tie occurred
-            showPopUpMessage(declaredWinner: "It's a tie!")
+            showPopUpMessage(gameStateResult: "It's a tie!")
         }
     }
     
@@ -140,10 +138,11 @@ class TwoPlayerGameVC: UIViewController {
         updateHeader()
     }
     
-    func showPopUpMessage(declaredWinner : String) {
-        let alert = UIAlertController(title: "Results", message: declaredWinner, preferredStyle: .actionSheet)
+    func showPopUpMessage(gameStateResult : String) {
+        let alert = UIAlertController(title: "Results", message: gameStateResult, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { action in
+            // Insert any methods to execute upon 'Play Again' selection
             self.clearBoard()
         }))
         
