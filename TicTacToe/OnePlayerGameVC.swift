@@ -36,7 +36,6 @@ class OnePlayerGameVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         updateHeader()
     }
     

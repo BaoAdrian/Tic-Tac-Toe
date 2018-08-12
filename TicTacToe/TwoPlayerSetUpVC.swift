@@ -15,32 +15,32 @@ class TwoPlayerSetUpVC: UIViewController {
     let PLAYER_ONE : String = "Player 1"
     let PLAYER_TWO : String = "Player 2"
 
-    
     var playerOneName : String = ""
     var playerTwoName : String = ""
     
-    // Editable TextFields to hold players names - Will have default values
+    // Tag the first player
+    var playerToGoFirst : Int = 0
+    
     @IBOutlet weak var playerOneTF: UITextField!
     @IBOutlet weak var playerTwoTF: UITextField!
+    
+    // Tagged 1 and 2
+    @IBOutlet weak var iconX: UIButton!
+    @IBOutlet weak var iconO: UIButton!
+    
+    // Default has x moving first, if false, O moves first
+    var xIsSelected : Bool = false
+    var oIsSelected : Bool = false
     
     @IBOutlet weak var startBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
 
     @IBAction func backBtnPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -71,16 +71,90 @@ class TwoPlayerSetUpVC: UIViewController {
         }
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Work in progress
+    @IBAction func iconBtnPressed(_ sender: UIButton) {
+        
+        if sender.isSelected == false {
+            
+            // Not currently selected, find which one is pressed and update image
+            sender.isSelected = true // Now selected
+            if sender.tag == 1 {
+                // X has been selected
+                sender.setImage(UIImage(named: "TTT_Icon_X_Selected.png"), for: .normal)
+            } else if sender.tag == 2 {
+                // O has been selected
+                sender.setImage(UIImage(named: "TTT_Icon_O_Selected.png"), for: .normal)
+            }
+            
+        } else if sender.isSelected == true {
+            
+            // Currently selected, find which one is pressed and update image
+            sender.isSelected = false // No longer selected
+            if sender.tag == 1 {
+                // X has been deselected
+                sender.setImage(UIImage(named: "TTT_Icon_X_No_BG.png"), for: .normal)
+            } else if sender.tag == 2 {
+                // O has been deselected
+                sender.setImage(UIImage(named: "TTT_Icon_O_No_BG.png"), for: .normal)
+            }
+            
+        }
+        
+        // Work in progress to not allow user to select both at the same time - it's a mess atm
+//        if xIsSelected == false && oIsSelected == false {
+//            // None currently selected, OK to assign a selected image
+//            if sender.isSelected == false {
+//                sender.isSelected = true
+//                if sender.tag == 1 {
+//                    xIsSelected = true
+//                    sender.setImage(UIImage(named: "TTT_Icon_X_Selected.png"), for: UIControlState.normal)
+//                } else if sender.tag == 2 {
+//                    oIsSelected = true
+//                    sender.setImage(UIImage(named: "TTT_Icon_O_Selected.png"), for: UIControlState.normal)
+//                }
+//            } else {
+//                sender.isSelected = false
+//                if sender.tag == 1 {
+//                    xIsSelected = false
+//                    sender.setImage(UIImage(named: "TTT_Icon_X_No_BG.png"), for: UIControlState.normal)
+//                } else if sender.tag == 2 {
+//                    oIsSelected = false
+//                    sender.setImage(UIImage(named: "TTT_Icon_O_No_BG.png"), for: UIControlState.normal)
+//                }
+//            }
+//        } else if xIsSelected == true && oIsSelected == false {
+//            if sender.isSelected == false {
+//                sender.isSelected = true
+//                if sender.tag == 1 {
+//                    xIsSelected = true
+//                    sender.setImage(UIImage(named: "TTT_Icon_X_No_BG.png"), for: UIControlState.normal)
+//                } else if sender.tag == 2 {
+//                    // Do nothing since the X is already selected
+//                }
+//            } else if sender.isSelected == false {
+//                sender.isSelected = false
+//                if sender.tag == 1 {
+//                    xIsSelected = false
+//                    sender.setImage(UIImage(named: "TTT_Icon_X_No_BG.png"), for: UIControlState.normal)
+//                } else if sender.tag == 2 {
+//                    oIsSelected = false
+//                    sender.setImage(UIImage(named: "TTT_Icon_O_No_BG.png"), for: UIControlState.normal)
+//                }
+//            }
+//        }
+        
+        
+        
+        
+        
+        
     }
-    */
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 }

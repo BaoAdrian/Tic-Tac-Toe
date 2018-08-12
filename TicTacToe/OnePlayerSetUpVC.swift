@@ -19,8 +19,6 @@ class OnePlayerSetUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     
@@ -35,6 +33,7 @@ class OnePlayerSetUpVC: UIViewController {
         performSegue(withIdentifier: "goToOnePlayerGameVC", sender: self)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnePlayerGameVC" {
             let destinationVC = segue.destination as! OnePlayerGameVC
@@ -47,7 +46,6 @@ class OnePlayerSetUpVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     
     override func didReceiveMemoryWarning() {

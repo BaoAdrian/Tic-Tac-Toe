@@ -153,8 +153,24 @@
                                     <action selector="backBtnPressed:" destination="XVo-46-vwf" eventType="touchUpInside" id="vI1-XJ-BWv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cc-Za-Nfr">
+                                <rect key="frame" x="190" y="337" width="95" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="TTT_Icon_X_No_BG"/>
+                                <connections>
+                                    <action selector="iconBtnPressed:" destination="XVo-46-vwf" eventType="touchUpInside" id="k6j-qa-Tml"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-5o-QkU">
+                                <rect key="frame" x="190" y="410" width="95" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="TTT_Icon_O_No_BG"/>
+                                <connections>
+                                    <action selector="iconBtnPressed:" destination="XVo-46-vwf" eventType="touchUpInside" id="R9K-Et-qkP"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Move:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIz-Ny-lNc">
-                                <rect key="frame" x="73" y="384" width="100" height="24"/>
+                                <rect key="frame" x="73" y="396" width="100" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -177,6 +193,8 @@
                         <viewLayoutGuide key="safeArea" id="vO3-zD-aad"/>
                     </view>
                     <connections>
+                        <outlet property="iconO" destination="U8n-5o-QkU" id="FWo-w4-ROg"/>
+                        <outlet property="iconX" destination="2cc-Za-Nfr" id="PSS-ad-Zog"/>
                         <outlet property="playerOneTF" destination="qn1-hP-pEI" id="gpp-3A-f4j"/>
                         <outlet property="playerTwoTF" destination="jgW-ld-1y8" id="i8o-Qk-9l6"/>
                         <outlet property="startBtn" destination="EtW-tm-udU" id="qYc-pK-l2e"/>
@@ -783,6 +801,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TTT_Icon_O_No_BG" width="2100" height="1500"/>
+        <image name="TTT_Icon_X_No_BG" width="2100" height="1500"/>
         <image name="TTT_Icons_O" width="2100" height="2100"/>
         <image name="TTT_Icons_X" width="2100" height="2100"/>
         <image name="TTT_blue_gradient_bg" width="1920" height="1920"/>
