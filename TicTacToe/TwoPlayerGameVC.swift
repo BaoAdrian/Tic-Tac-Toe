@@ -10,10 +10,14 @@ import UIKit
 
 class TwoPlayerGameVC: UIViewController {
     
+    let DEFAULT_FIRST_PLAYER : Int = 1
+    
     let playerOneIcon : String = "TTT_Icons_X.png"
     let playerTwoIcon : String = "TTT_Icons_O.png"
     
-    var activePlayer : Int = 1
+    // Default to have player one go first
+    var activePlayer : Int = 0
+    var playerToGoFirst : Int = 0
     
     // 0 - inactive
     var board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -47,13 +51,13 @@ class TwoPlayerGameVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        determineFirstMove()
         updateHeader()
     }
     
     // When a section (button) is pressed, sets Icon image and updates active player
     @IBAction func btnPressed(_ sender: AnyObject) {
         
-        print(activePlayer)
         if board[sender.tag - 1] == 0 && isActive == true {
             // Set board to update to whichever active player selected place on board
             board[sender.tag - 1] = activePlayer
@@ -102,6 +106,14 @@ class TwoPlayerGameVC: UIViewController {
     }
     
     
+    func determineFirstMove() {
+        if playerToGoFirst != 1 && playerToGoFirst != 2 {
+            activePlayer = DEFAULT_FIRST_PLAYER
+        } else {
+            activePlayer = playerToGoFirst
+        }
+    }
+    
     func updateHeader() {
         playerOneLabel.text = "\(playerOneName)" + ": " + "\(playerOneScore)"
         playerTwoLabel.text = "\(playerTwoName)" + ": " + "\(playerTwoScore)"
@@ -138,13 +150,6 @@ class TwoPlayerGameVC: UIViewController {
         board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         isActive = true
         
-        // Alternating turns
-        if (playerOneScore + playerTwoScore) % 2 == 0 {
-            activePlayer = 1
-        } else {
-            activePlayer = 2
-        }
-        
         for i in 1...9 {
             let btn = view.viewWithTag(i) as! UIButton
             btn.setImage(nil, for: UIControlState())
@@ -157,12 +162,12 @@ class TwoPlayerGameVC: UIViewController {
     
     
     func showToast(message : String) {
-
+        
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: "Helvetica Neue", size: 18.0)
+        toastLabel.font = UIFont(name: "Helvetica Neue", size: 16.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;

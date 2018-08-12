@@ -68,6 +68,8 @@ class TwoPlayerSetUpVC: UIViewController {
             
             destinationVC.playerOneName = self.playerOneName
             destinationVC.playerTwoName  = self.playerTwoName
+            
+            destinationVC.playerToGoFirst = self.playerToGoFirst
         }
     }
     
@@ -80,9 +82,11 @@ class TwoPlayerSetUpVC: UIViewController {
             sender.isSelected = true // Now selected
             if sender.tag == 1 {
                 // X has been selected
+                playerToGoFirst = 1
                 sender.setImage(UIImage(named: "TTT_Icon_X_Selected.png"), for: .normal)
             } else if sender.tag == 2 {
                 // O has been selected
+                playerToGoFirst = 2
                 sender.setImage(UIImage(named: "TTT_Icon_O_Selected.png"), for: .normal)
             }
             
