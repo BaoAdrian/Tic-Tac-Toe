@@ -12,13 +12,16 @@ Project made to test various programmatic concepts using Swift such as passing d
   <li> Thorough Testing </li>
   <li> Implement Computer UI using minimax </li>
   <li> Best-of Series feature </li>
+  <li> Various animations such as drawing winning lines before announcing winner </li>
 </ul>
 
 </br>
 
 <h1>Latest Adjustments:</h1>
 <ul>
-  <li> TBD </li>
+  <li> 08/11/2018 - Introduce alternating turns functionality when a winner is declared </li>
+  <li> 08/11/2018 - Convert toast message to pop-up using UIAlertController </li>
+  <li> 08/10/2018 - Created toast message functionality to declare state of game (i.e: win/lose/tie) </li>
 </ul>
 
 
