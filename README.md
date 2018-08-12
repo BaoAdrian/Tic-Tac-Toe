@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-<img align = "right" src = "SampleImages/HomeScreenVC.png" width = "275" height = "450" hspace = "20" alt = "Homescreen" />
+<img align = "right" src = "SampleImages/HomeScreenVC.png" width = "275" height = "500" hspace = "20" alt = "Homescreen" />
 
 Tic-Tac-Toe iOS Game developed using Swift 4 and Xcode 9.4.1. Implemented introductory UX operations such as name customizations, allowing choice of which player makes the first move, and keeping score to determine winner of a 'Best-of' series. 
 Project made to test various programmatic concepts using Swift such as passing data between View Controllers and utilizing Custom Segues.
@@ -33,7 +33,9 @@ Project made to test various programmatic concepts using Swift such as passing d
 
 <h1>Notes:</h1>
 
-<h3>Passing Data between View Controllers </h3>
+<h2> Passing Data between View Controllers </h2>
+
+</br>
 
 <p> For the purpose of simplification and readablity, the two View Controllers in queston for this section will be named FirstViewController and SecondViewController respectively. </p>
 
@@ -140,18 +142,19 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
 
 
 
-<h3> 
+<h2> 
   Pop-Up Message using UIAlertController 
-</h3>
+</h2>
+
+</br>
 
 <p> 
-  <img align = "right" src = "SampleImages/TwoPlayerGameWithPopUp.png" width = "275" height = "500" hspace = "20" alt = "TwoPlayerGamePopUp" />
+  <img align = "right" src = "SampleImages/PopUp.png" width = "325" height = "150" hspace = "20" alt = "TwoPlayerGamePopUp" />
   
   Utilized UIAlertController as a way to allow a clean reset of play as well as a notification to declare the winner (if any) or a tie. 
 </p>
 
 
-</br>
 
 <p>
   
