@@ -38,7 +38,7 @@ Project made to test various programmatic concepts using Swift such as passing d
 
 </br>
 
-<p> For the purpose of simplification and readablity, the two View Controllers in queston for this section will be named FirstViewController and SecondViewController respectively. </p>
+<p> For the purpose of simplification and readablity, the two View Controllers in queston for this section will be named  FirstViewController and SecondViewController respectively. </p>
 
 <p>
   For this application, the data that needed to be passed from FirstViewController to SecondViewController originated from input entered into UITextField(s). The number of UITextFields is determined by which game mode the user wanted to play. 
