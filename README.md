@@ -15,7 +15,7 @@ Project made to test various programmatic concepts using Swift such as passing d
   <li> Implement Computer UI using minimax </li>
   <li> Best-of Series feature </li>
   <li> Various animations such as drawing winning lines before announcing winner </li>
-  <li> Introduce Computer AI in One-Player mode with varying difficulty </li>
+  <li> Add Computer AI in One-Player mode with varying difficulty </li>
 </ul>
 
 </br>
