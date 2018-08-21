@@ -186,6 +186,8 @@ Create a Manual Segue in Main.storyboard from FirstViewController to SecondViewC
   The function can be called anywhere in the program with any parameters, however, for this application, it made sense to call this function every time a winner was detected OR the board filled and the game ended in a tie. The following method was used to check if the current state of the board contained a winning line (i.e. rows, columns, or diagonals) and presents UIAlertController with the respective information. 
   
   
+  <img align = "right" src = "SampleImages/TwoPlayerGameWithPopUp.png" width = "275" height = "500" hspace = "20" alt = "Homescreen" />
+  
   ```swift
   
         // Check if board has a winner
